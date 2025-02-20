@@ -88,3 +88,17 @@ graph LR
     end
 ```
 
+# json schemaの概要について
+現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている
+## プロパティ一覧
+
+**id**:phenopacketデータのidである。PMIDで始まる形式で表記される。
+
+**subject**:object型であり、リンク先のようなpropertyを持っている<a id="subject1"></a>(#subject1のproperty)
+
+**subjectのproperty**<a id="subject1のproperty"></a>(#subject1)
+
+
+
+
+
