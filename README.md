@@ -201,7 +201,12 @@ assayに対する測定値を示している。object型であり、quantityを�
 ## diagnosis
 診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。  
 [**disease**](#disease)  
-[**genomicInterpretation](#genomicInterpretation)  
+[**genomicInterpretation**](#genomicInterpretation)  
+
+## term  
+疾患に関するOMIMタームを示す。object型であり、idとlabelを必ず含む  
+[**id(OMIM)**](#id(OMIM))
+[**label**](#label)
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
@@ -212,11 +217,18 @@ assayに対する測定値を示している。object型であり、quantityを�
 [age](#age)  
 [ontologyClass](#ontologyClass)  
 
+
+## id(OMIM)  
+OMIMのidを示す  
+
+## label(OMIM)
+OMIMのラベルを示す。
+
 ## id(HPO)  
 HPOのidを示す  
 
 ## label(HPO)  
-HPOのラベルを示す。
+HPOのラベルを示す。  
 
 
 
