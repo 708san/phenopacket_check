@@ -199,12 +199,12 @@ assayに対する測定値を示している。object型であり、quantityを�
 **UNSOLVED**:診断完了したが確定診断なし  
 
 ## diagnosis
-診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。
-[**disease**](#disease)
-[**genomicInterpretation](#genomicInterpretation)
+診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。  
+[**disease**](#disease)  
+[**genomicInterpretation](#genomicInterpretation)  
 
 ## status
-生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。
+生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
 
 
 ## timeOfDeath
