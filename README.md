@@ -182,9 +182,9 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 その表現型や症状が見られ**なかった**時に明示的に与えられる。bool型で与えられる(false)  
 
 ## assay  
-測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている
-[assay](#assay)
-[value](#value)
+測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている  
+[assay](#assay)  
+[value](#value)  
 
 ## value
 assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
@@ -198,15 +198,15 @@ assayに対する測定値を示している。object型であり、quantityを�
 **SOLVED**:診断完了し確定診断がなされている  
 **UNSOLVED**:診断完了したが確定診断なし  
 
-## diagnosis
+## diagnosis  
 診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。  
 [**disease**](#disease)  
 [**genomicInterpretation**](#genomicInterpretation)  
 
 ## term  
 疾患に関するOMIMタームを示す。object型であり、idとlabelを必ず含む  
-[**id(OMIM)**](#id(OMIM))
-[**label**](#label)
+[**id(OMIM)**](#id(OMIM))  
+[**label**](#label(OMIM))  
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
@@ -218,18 +218,17 @@ assayに対する測定値を示している。object型であり、quantityを�
 [ontologyClass](#ontologyClass)  
 
 
-## id(OMIM)  
-OMIMのidを示す  
-
-## label(OMIM)
-OMIMのラベルを示す。
-
 ## id(HPO)  
 HPOのidを示す  
 
 ## label(HPO)  
 HPOのラベルを示す。  
 
+## id(OMIM)  
+OMIMのidを示す  
+
+## label(OMIM)  
+OMIMのラベルを示す。
 
 
 
