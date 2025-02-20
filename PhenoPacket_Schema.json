@@ -249,7 +249,8 @@
                     ],
                     "additionalProperties": false
                 }
-            }
+            },
+             "additionalProperties": false
         },
         "interpretations": {
             "type": "array",
