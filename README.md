@@ -227,7 +227,7 @@ HPOのラベルを示す。
 ## id(OMIM)  
 OMIMのidを示す  
 
-## #label(OMIM)  
+## label(OMIM)  
 OMIMのラベルを示す。  
 
 
