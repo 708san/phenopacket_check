@@ -127,7 +127,7 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 ## interpration  
 病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。  
-[**id**](#id(subject))  
+[**id(subject)**](#id(subject))  
 [**progressStatus**](#progressStatus)  
 [**diagnosis**](#diagnosis)  
 
@@ -169,13 +169,39 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 [timeOfDeath](#timeOfDeath)  
 
 ## type
-表現型のオントロジを記述する。以下のプロパティを持っている
-[id(HPO)](#id(HPO))
+表現型のオントロジを記述する。以下のプロパティを持っている。id,ラベルともに全てに含まれる  
+[id(HPO)](#id(HPO))  
 [label(HPO)](#label(HPO))  
 
 ## onset  
+その表現型や症状が初めて確認、診断された時間について記述されている。object型で以下のpropertyを持っている。  
+[ontologyClass](#ontologyClass)  
+[age](#age)  
 
+## excluded  
+その表現型や症状が見られ**なかった**時に明示的に与えられる。bool型で与えられる(false)  
 
+## assay  
+測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている
+[assay](#assay)
+[value](#value)
+
+## value
+assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
+[quantity](#quantity)  
+
+## progressStatus  
+診断の状態を示す。以下の値を持ちうる  
+**UNKNOWN_PROGRESS**:情報なし  
+**IN_PROGRESS**:確定しておらず診断が行われている途中  
+**COMPLETED**:診断終了  
+**SOLVED**:診断完了し確定診断がなされている  
+**UNSOLVED**:診断完了したが確定診断なし  
+
+## diagnosis
+診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。
+[**disease**](#disease)
+[**genomicInterpretation](#genomicInterpretation)
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。
