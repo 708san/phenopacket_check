@@ -170,12 +170,12 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## type
 表現型のオントロジを記述する。以下のプロパティを持っている。id,ラベルともに全てに含まれる  
-[**id(HPO)**](#id(HPO))  
-[**label(HPO)**](#label(HPO))  
+[**id(HPO)**](#idHPO)  
+[**label(HPO)**](#labelHPO)  
 
 ## onset  
 その表現型や症状が初めて確認、診断された時間について記述されている。object型で以下のpropertyを持っている。  
-[**ontologyClass**](#ontologyClass)  
+[**ontologyClass**](#ontologyclass)  
 [**age**](#age)  
 
 ## excluded  
@@ -183,8 +183,8 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## assay  
 測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている  
-[**id(assay)**](#id(assay))  
-[**label(assay)**](#label(assay))  
+[**id(assay)**](#idassay)  
+[**label(assay)**](#labelassay)  
 
 ## value
 assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
@@ -201,12 +201,12 @@ assayに対する測定値を示している。object型であり、quantityを�
 ## diagnosis  
 診断の結果存在することが推定された疾患について病名及び遺伝子への所見を示している。object型であり、以下のプロパティを持つ。disease,genomicInterpretationsは全てに含まれる。  
 [**disease**](#disease)  
-[**genomicInterpretation**](#genomicInterpretation)  
+[**genomicInterpretation**](#genomicinterpretation)  
 
 ## term  
 疾患に関するOMIMタームを示す。object型であり、idとlabelを必ず含む  
-[**id(OMIM)**](#id(OMIM))  
-[**label(OMIM)**](#label(OMIM))  
+[**id(OMIM)**](#idomim)  
+[**label(OMIM)**](#labelomim)  
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
@@ -215,7 +215,7 @@ assayに対する測定値を示している。object型であり、quantityを�
 ## timeOfDeath
 患者の死亡時を表す。object型で以下のプロパティを持つ。  
 [**age**](#age)  
-[**ontologyClass**](#ontologyClass)  
+[**ontologyClass**](#ontologyclass)  
 
 
 ## id(HPO)  
