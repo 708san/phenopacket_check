@@ -446,7 +446,7 @@
                         "required": ["disease", "genomicInterpretations"]
                     }
                 },
-                "required": ["progressStatus", "diagnosis"],
+                "required": [ "id","progressStatus", "diagnosis"],
                 "additionalProperties": false
             }
         },
