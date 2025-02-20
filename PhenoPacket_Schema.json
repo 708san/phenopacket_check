@@ -66,15 +66,47 @@
                                 "UNKNOWN_STATUS",
                                 "DECEASED"
                             ]
+                        },
+                         "timeOfDeath":{
+                            "type":"object",
+                            "properties": {
+                                "age":{
+                                    "type":"object",
+                                    "properties": {
+                                        "iso8601duration":{
+                                            "type":"string"
+                                        }
+                                    },
+                                    "required": ["iso8601duration"],
+                                    "additionalProperties": false
+                                },
+                                "ontologyClass":{
+                                    "type":"object",
+                                    "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^HP:.*"
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "label"
+                                ],
+                                "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
                         }
+                    },
+                    "additionalProperties": false
                     }
-                }
-            },
-            "required": [
-                "id"
-            ],
+                    },
+            "required": ["id"],
             "additionalProperties": false
-        },
+            },
         "phenotypicFeatures": {
             "type": "array",
             "items": {
