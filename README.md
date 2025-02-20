@@ -94,13 +94,13 @@ PhenoPacketStoreのデータには現状PhenoPacketSchemaのtop level要素のPh
 
 ## 最上位のプロパティ  
 id, subject, interpretations, diseases, metaDataはすべてのデータに含まれる  
-[id](#id)  
-[subject](#subject)  
-[PhenotypicFeatures](#PhenotypicFeatures)  
-[measurements](#measurements)  
-[interpretation](#interpretations)  
-[disease](#disease)  
-[metaData](#metaData)  
+[**id**](#id)  
+[**subject**](#subject)  
+[**PhenotypicFeatures**](#PhenotypicFeatures)  
+[**measurements**](#measurements)  
+[**interpretation**](#interpretations)  
+[**disease**](#disease)  
+[**metaData**](#metaData)  
 
 ## id
 phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するidで構成される。  
@@ -114,18 +114,40 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 [**vitalstatus**](#vitalstatus)  
 
 ## PhenotypicFeatures
-表現型を記述する。配列型であり、配列の一つの要素は以下のようなプロパティを持つobject型である。  
+表現型を記述する。配列型であり、配列の一つの要素は以下のようなプロパティを持つobject型である。typeはすべてに含まれている。 
 [**type**](#type)  
 [**onset**](#onset)  
 [**excluded**](#excluded)    
 
 ## measurements  
-測定値を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。  
+測定値を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。assayとvalueはすべてに含まれる。  
 [**assay**](#assay)  
 [**value**](#value)  
 
 
 ## interpration  
+病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。  
+[**id**](#id(subject))  
+[**progressStatus**](#progressStatus)  
+[**diagnosis**](#diagnosis)  
+
+## diseases  
+疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。  
+[**term**](#term)  
+[**onset**](#onset)  
+
+## metaData
+データの作られた日やオントロジーについて記述する。object型であり、以下のようなプロパティを持つ。created, createdBy, resources, phenopacketSchemaVersion, externalReferencesはすべてのデータに含まれる。  
+[**created**](#created)  
+[**createdBy**](#createdBy)   
+[**resources**](#resources)  
+[**phenopacketSchemaVersion**](#phenopacketSchemaVersion)  
+[**externalReferences**](#externalReferences)  
+
+
+
+
+
 
 
 
@@ -146,6 +168,15 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 [status](#status)  
 [timeOfDeath](#timeOfDeath)  
 
+## type
+表現型のオントロジを記述する。以下のプロパティを持っている
+[id(HPO)](#id(HPO))
+[label(HPO)](#label(HPO))  
+
+## onset  
+
+
+
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。
 
@@ -155,6 +186,11 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 [age](#age)  
 [ontologyClass](#ontologyClass)  
 
+## id(HPO)  
+HPOのidを示す  
+
+## label(HPO)  
+HPOのラベルを示す。
 
 
 
