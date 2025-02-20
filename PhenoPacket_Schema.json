@@ -148,8 +148,19 @@
                                     "label"
                                 ],
                                 "additionalProperties": false
+                            },
+                            "age":{
+                                "type":"object",
+                                    "properties": {
+                                        "iso8601duration":{
+                                            "type":"string"
+                                        }
+                                    },
+                                    "required": ["iso8601duration"],
+                                    "additionalProperties": false
                             }
-                        }
+                        },
+                        "additionalProperties": false
                     },
                     "excluded": {
                         "type": "boolean"
