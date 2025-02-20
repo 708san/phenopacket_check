@@ -89,16 +89,49 @@ graph LR
 ```
 
 # json schemaの概要について
-現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている
+PhenoPacketStoreのデータには現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている
 # プロパティ一覧
 
 ## id
-phenopacketデータのidである。PMIDで始まる形式で表記される。
+phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するidで構成される。
 
-## [subject](#subjectのproperty)
-object型であり、リンク先のようなpropertyを持っている
+## subject
+検体の情報を表すobject型であり、以下のようなpropertyを持っている。idのみすべてのデータに含まれている
+[id](#id(subject))
+[sex](#sex)
+[timeAtLastEncounter](#timeAtLastEncounter)
+[vitalstatus](#vitalstatus)
 
-### subjectのproperty
+## 
+
+## id(subject)
+個人を識別するid.
+
+## sex
+検体の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。
+UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
+
+## timeAtLastEncounter
+表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ。
+[age](#age)
+[ontologyClass](#ontologyClass)
+
+## vitalstatus
+生存情報を示すobject型のデータ。以下のプロパティを持つ。
+[status](#status)
+[timeOfDeath](#timeOfDeath)
+
+## status
+生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。
+
+
+## timeOfDeath
+患者の死亡時を表す。object型で以下のプロパティを持つ。
+[age](#age)
+[ontologyClass](#ontologyClass)
+
+
+
 
 
 
