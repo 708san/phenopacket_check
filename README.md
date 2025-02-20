@@ -206,7 +206,7 @@ assayに対する測定値を示している。object型であり、quantityを�
 ## term  
 疾患に関するOMIMタームを示す。object型であり、idとlabelを必ず含む  
 [**id(OMIM)**](#id(OMIM))  
-[**label**](#label(OMIM))  
+[**label(OMIM)**](#label(OMIM))  
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
@@ -227,8 +227,8 @@ HPOのラベルを示す。
 ## id(OMIM)  
 OMIMのidを示す  
 
-## label(OMIM)  
-OMIMのラベルを示す。
+## #label(OMIM)  
+OMIMのラベルを示す。  
 
 
 
