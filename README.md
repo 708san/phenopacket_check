@@ -88,47 +88,72 @@ graph LR
     end
 ```
 
-# json schemaの概要について
-PhenoPacketStoreのデータには現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている
-# プロパティ一覧
+# json schemaの概要について  
+PhenoPacketStoreのデータには現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている  
+# プロパティ一覧　　
+
+## 最上位のプロパティ  
+id, subject, interpretations, diseases, metaDataはすべてのデータに含まれる  
+[id](#id)  
+[subject](#subject)  
+[PhenotypicFeatures](#PhenotypicFeatures)  
+[measurements](#measurements)  
+[interpretation](#interpretations)  
+[disease](#disease)  
+[metaData](#metaData)  
 
 ## id
-phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するidで構成される。
+phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するidで構成される。  
+
 
 ## subject
-検体の情報を表すobject型であり、以下のようなpropertyを持っている。idのみすべてのデータに含まれている
-[id](#id(subject))
-[sex](#sex)
-[timeAtLastEncounter](#timeAtLastEncounter)
-[vitalstatus](#vitalstatus)
+検体の情報を表すobject型であり、以下のようなpropertyを持っている。idのみすべてのデータに含まれている  
+[**id**](#id(subject))  
+[**sex**](#sex)  
+[**timeAtLastEncounter**](#timeAtLastEncounter)  
+[**vitalstatus**](#vitalstatus)  
 
-## 
+## PhenotypicFeatures
+表現型を記述する。配列型であり、配列の一つの要素は以下のようなプロパティを持つobject型である。  
+[**type**](#type)  
+[**onset**](#onset)  
+[**excluded**](#excluded)    
+
+## measurements  
+測定値を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。  
+[**assay**](#assay)  
+[**value**](#value)  
+
+
+## interpration  
+
+
 
 ## id(subject)
-個人を識別するid.
+個人を識別するid.  
 
 ## sex
-検体の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。
+検体の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。  
 UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## timeAtLastEncounter
-表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ。
-[age](#age)
-[ontologyClass](#ontologyClass)
+表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ.  
+[age](#age)  
+[ontologyClass](#ontologyClass)  
 
 ## vitalstatus
-生存情報を示すobject型のデータ。以下のプロパティを持つ。
-[status](#status)
-[timeOfDeath](#timeOfDeath)
+生存情報を示すobject型のデータ。以下のプロパティを持つ。  
+[status](#status)  
+[timeOfDeath](#timeOfDeath)  
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。
 
 
 ## timeOfDeath
-患者の死亡時を表す。object型で以下のプロパティを持つ。
-[age](#age)
-[ontologyClass](#ontologyClass)
+患者の死亡時を表す。object型で以下のプロパティを持つ。  
+[age](#age)  
+[ontologyClass](#ontologyClass)  
 
 
 
