@@ -160,35 +160,35 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## timeAtLastEncounter
 表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ.  
-[age](#age)  
-[ontologyClass](#ontologyClass)  
+[**age**](#age)  
+[**ontologyClass**](#ontologyClass)  
 
 ## vitalstatus
 生存情報を示すobject型のデータ。以下のプロパティを持つ。  
-[status](#status)  
-[timeOfDeath](#timeOfDeath)  
+[**status**](#status)  
+[**timeOfDeath**](#timeOfDeath)  
 
 ## type
 表現型のオントロジを記述する。以下のプロパティを持っている。id,ラベルともに全てに含まれる  
-[id(HPO)](#id(HPO))  
-[label(HPO)](#label(HPO))  
+[**id(HPO)**](#id(HPO))  
+[**label(HPO)**](#label(HPO))  
 
 ## onset  
 その表現型や症状が初めて確認、診断された時間について記述されている。object型で以下のpropertyを持っている。  
-[ontologyClass](#ontologyClass)  
-[age](#age)  
+[**ontologyClass**](#ontologyClass)  
+[**age**](#age)  
 
 ## excluded  
 その表現型や症状が見られ**なかった**時に明示的に与えられる。bool型で与えられる(false)  
 
 ## assay  
 測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている  
-[assay](#assay)  
-[value](#value)  
+[**id(assay)**](#id(assay))  
+[**label(assay)**](#label(assay))  
 
 ## value
 assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
-[quantity](#quantity)  
+[**quantity**](#quantity)  
 
 ## progressStatus  
 診断の状態を示す。以下の値を持ちうる  
@@ -214,8 +214,8 @@ assayに対する測定値を示している。object型であり、quantityを�
 
 ## timeOfDeath
 患者の死亡時を表す。object型で以下のプロパティを持つ。  
-[age](#age)  
-[ontologyClass](#ontologyClass)  
+[**age**](#age)  
+[**ontologyClass**](#ontologyClass)  
 
 
 ## id(HPO)  
