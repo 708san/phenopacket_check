@@ -164,8 +164,8 @@
         "measurements": {
             "type": "array",
             "items": {
-                "type": "object"
-            },
+                "type": "object",
+            
             "properties": {
                 "assay": {
                     "type": "object",
@@ -237,10 +237,10 @@
                                     "additionalProperties": false
                                 }
                             },
+                            "additionalProperties": false,
                             "required": [
                                 "unit",
-                                "value",
-                                "referenceRange"
+                                "value"
                             ]
                         }
                     },
@@ -250,8 +250,10 @@
                     "additionalProperties": false
                 }
             },
-             "additionalProperties": false
-        },
+            "required": ["assay","value"],
+            "additionalProperties": false
+        }
+    },
         "interpretations": {
             "type": "array",
             "items": {
