@@ -155,11 +155,11 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 個人を識別するid.  
 
 ## sex
-検体の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。  
+[被験者](#subject)の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。  
 UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## timeAtLastEncounter
-表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ.  
+[被験者](#subject)表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ.  
 [**age**](#age)  
 [**ontologyClass**](#ontologyClass)  
 
@@ -254,12 +254,17 @@ phenopacketデータの作成時がdate-time形式(ISO8601)の形で与えられ
 [**referenceRange**](#referncerange)  
 
 ## disease
-診断された疾患についてオントロジーの形で与えられたオブジェクト型である。以下のプロパティを必ず含む。
+[診断](#diagnosis)された疾患についてオントロジーの形で与えられたオブジェクト型である。以下のプロパティを必ず含む。
 [**id**](#idomim)  
 [**label**](#labelomim)  
 
 ## genomicInterpretation
-診断された疾患の原因となるゲノム
+[診断](#diagnosis)されたバリアントの情報を示す。配列型であり、一つの要素は以下のプロパティを持つobject型である。subjectOrBiosampleId, interpretationStatus, variantInterpretationは全てに含まれる。  
+[**subjectOrBiosampleId**](#subjectorbiosampleid)  
+[**interpretationStatus**](#interpretationstatus)  
+[**variantInterpretation**](#variantinterpretation)  
+
+
 
 
 
@@ -276,6 +281,26 @@ OMIMのidを示す
 ## label(OMIM)  
 OMIMのラベルを示す。  
 
+
+## id(resources)
+利用しているオントロジーなどの[リソース](#resources)についてidで表したもの。  
+
+## name(resources)
+リソースの正式名称。  
+
+## url  
+urlである。  
+
+## version  
+使用したリソースのバージョンを示す。  
+
+## namespacePrefix  
+CURIEで使用されるprefix  
+
+## iriPrefix  
+iriのprefixである  
+
+
 ## id(PMID)  
 論文のPMIDを示す。  
 
@@ -286,6 +311,48 @@ OMIMのラベルを示す。
 ## description  
 リファレンス論文のタイトルを示す.  
 
+## OntologyClass  
+表現型や症状についてHPOタームで記述したオブジェクト型である。idとlabelを必ず含んでいる。  
+プロパティ  
+[**id**](#idhpo)  
+[**label**](#labelomim)
+
+## iso8601duration  
+年齢の記述で用いられている。iso8601durationの形式で与えられている。  
+
+
+## unit  
+単位について記述したobject型のデータである。以下のプロパティを必ず含んでいる。
+[**id**](#idunit)  
+[**label**](#labelunit)  
+
+## value(number)  
+[assay](#assay)による測定値を示した数値データである。unitと組み合わせて使用される。  
+
+## referenceRange
+[value(number)](#valuenumber)の取りうる通常の値を示したobject型のデータである。以下のすべてのプロパティを必ず持つ  
+[**unit**](#unit)  
+[**low**](#low)  
+[**high**](#high)  
+
+## subjectOrBiosampleId  
+[被験者のid](#idsubject)もしくはバイオサンプルのidを示した文字列。  
+
+## interpretationStatus  
+[genomic interpretation](#genomicinterpretation)の[バリアント](#variantinterpretation)が[疾患](#disease)に関連しているかを示している。次の5つの値のいずれかを取りうる。  
+**CAUSATIVE**：バリアントは疾患の原因である  
+**CONTRIBUTORY**:バリアントは疾患と関連している  
+**CANDIDATE**:バリアントは疾患と関連している可能性がある  
+**REJECTED**:バリアントは疾患と関係がない  
+**UNKNOWN_STATUS**:わからない  
+
+
+## variantInterpretation  
+ACMGによるバリアントのinterpretationのガイドラインに従ったinterpretationを示すobject型である。同じくobject型である、variationDescriptorのみを含んでいる  
+プロパティ
+[**variationDescriptor**](#variationdescriptor)  
+
+## variationDescriptor  
 
 
 
