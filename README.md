@@ -104,7 +104,7 @@ id, subject, interpretations, diseases, metaDataはすべてのデータに含�
 
 ## id
 phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するid(subject_id)で構成される。  
-[**最上位**](#https://github.com/708san/phenopacket_check/edit/main/README.md#最上位のプロパティ)
+
 
 
 ## subject
@@ -154,6 +154,8 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 ## id(subject)
 個人を識別するid.  
+**親プロパティ**  
+[**subject**](#subject)  
 
 ## sex
 [被験者](#subject)の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。  
