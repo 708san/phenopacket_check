@@ -224,25 +224,25 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 [**vitalstatus**](#vitalstatus)  
 
 ## PhenotypicFeatures
-表現型を記述する。配列型であり、配列の一つの要素は以下のようなプロパティを持つobject型である。typeはすべてに含まれている。   
+表現型を記述する。配列型であり、配列の一つの要素は以下のようなプロパティを持つobject型である。つまり、表現型が列挙されている。typeはすべてに含まれている。   
 [**type**](#type)  
 [**onset**](#onset)  
 [**excluded**](#excluded)    
 
 ## measurements  
-測定値を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。assayとvalueはすべてに含まれる。  
+測定値を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。一つの要素が測定方法([assay](#assay))とその値([value](#value))を持つ。assayとvalueはすべてに含まれる。  
 [**assay**](#assay)  
 [**value**](#value)  
 
 
 ## interpration  
-病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。現状のPhenoPacketStoreのデータはすべて配列長1である.    
+病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。現状のPhenoPacketStoreのデータはすべて配列長1である. つまり、診断されている疾患は一つのみ。   
 [**id(subject)**](#id(subject))  
 [**progressStatus**](#progressStatus)  
 [**diagnosis**](#diagnosis)  
 
 ## diseases  
-疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。現状、配列長はすべて1であるため、[**disease**](#disease)と対応する  
+疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。現状、配列長はすべて1であるため、疾患は一つのみ。[**disease**](#disease)と対応する  
 [**term**](#term)  
 [**onset**](#onset)  
 
@@ -304,12 +304,12 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 その表現型や症状が見られ**なかった**時に明示的に与えられる。bool型で与えられる(false)  
 
 ## assay  
-測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている  
+測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。一つの要素が一つのassayの情報を指す。id,labelとも全てに含まれている  
 [**id(assay)**](#idassay)  
 [**label(assay)**](#labelassay)  
 
 ## value
-assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
+[assay](#assay)に対する測定値を示している。object型であり、quantityを必ず持つ。  
 [**quantity**](#quantity)  
 
 ## progressStatus  
