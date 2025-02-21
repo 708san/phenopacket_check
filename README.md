@@ -133,7 +133,7 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 [**diagnosis**](#diagnosis)  
 
 ## diseases  
-疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。  
+疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。現状、配列長はすべて1であるため、[**disease**](#disease)と対応する  
 [**term**](#term)  
 [**onset**](#onset)  
 
