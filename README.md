@@ -254,7 +254,7 @@ phenopacketデータの作成時がdate-time形式(ISO8601)の形で与えられ
 [**referenceRange**](#referncerange)  
 
 ## disease
-[診断](#diagnosis)された疾患についてオントロジーの形で与えられたオブジェクト型である。以下のプロパティを必ず含む。
+[診断](#diagnosis)された疾患についてオントロジーの形で与えられたオブジェクト型である。以下のプロパティを必ず含む。  
 [**id**](#idomim)  
 [**label**](#labelomim)  
 
@@ -322,7 +322,7 @@ iriのprefixである
 
 
 ## unit  
-単位について記述したobject型のデータである。以下のプロパティを必ず含んでいる。
+単位について記述したobject型のデータである。以下のプロパティを必ず含んでいる。  
 [**id**](#idunit)  
 [**label**](#labelunit)  
 
@@ -349,7 +349,7 @@ iriのprefixである
 
 ## variantInterpretation  
 ACMGによるバリアントのinterpretationのガイドラインに従ったinterpretationを示すobject型である。同じくobject型である、variationDescriptorのみを含んでいる  
-プロパティ
+プロパティ  
 [**variationDescriptor**](#variationdescriptor)  
 
 ## variationDescriptor  
