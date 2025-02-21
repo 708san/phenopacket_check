@@ -312,7 +312,7 @@ iriのprefixである
 リファレンス論文のタイトルを示す.  
 
 ## OntologyClass  
-表現型や症状についてHPOタームで記述したオブジェクト型である。idとlabelを必ず含んでいる。  
+onsetや時期の情報についてHPOタームで記述したオブジェクト型である。idとlabelを必ず含んでいる。  
 プロパティ  
 [**id(HPO)**](#idhpo)  
 [**label(HPO)**](#labelomim)
