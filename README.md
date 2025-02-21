@@ -160,17 +160,26 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 ## sex
 [被験者](#subject)の性別。UNKNOWN_SEX,FEMALE,MALE,OTHER_SEXの4値で与えられる。  
-UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
+UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。  
+  
+**親プロパティ**  
+[**subject**](#subject)  
 
 ## timeAtLastEncounter
 [被験者](#subject)表現形の観察時の時間情報を示す。object型で以下のプロパティを持つ.  
 [**age**](#age)  
 [**ontologyClass**](#ontologyClass)  
 
+**親プロパティ**  
+[**subject**](#subject)
+
 ## vitalstatus
 生存情報を示すobject型のデータ。以下のプロパティを持つ。  
 [**status**](#status)  
 [**timeOfDeath**](#timeOfDeath)  
+
+**親プロパティ**  
+[**subject**](#subject)  
 
 ## type
 表現型のオントロジを記述する。以下のプロパティを持っている。id,ラベルともに全てに含まれる  
