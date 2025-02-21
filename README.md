@@ -154,6 +154,7 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 ## id(subject)
 個人を識別するid.  
+  
 **親プロパティ**  
 [**subject**](#subject)  
 
