@@ -523,7 +523,7 @@
             "properties": {
                 "created": {
                     "type": "string",
-                    "pattern": "^[0-9]{4}"
+                    "format": "date-time"
                 },
                 "createdBy": {
                     "type": "string"
