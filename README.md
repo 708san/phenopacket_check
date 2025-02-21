@@ -7,7 +7,7 @@ https://github.com/monarch-initiative/phenopacket-store/releases/latest/download
 
 ```mermaid
 graph TD;
-    A["DataOfPhenoPacketStore"]
+    A["dict"]
     A --> B["id (必須)"]
     B -->|Pattern: ^PMID.*| B1["string"]
 
