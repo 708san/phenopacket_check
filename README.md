@@ -99,11 +99,11 @@ id, subject, interpretations, diseases, metaDataはすべてのデータに含�
 [**PhenotypicFeatures**](#PhenotypicFeatures)  
 [**measurements**](#measurements)  
 [**interpretation**](#interpretations)  
-[**disease**](#disease)  
+[**diseases**](#diseases)  
 [**metaData**](#metaData)  
 
 ## id
-phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するidで構成される。  
+phenopacketデータのidである。PMIDで始まる形式で表記される。PMID+個人を識別するid(subject_id)で構成される。  
 
 
 ## subject
@@ -127,7 +127,7 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 ## interpration  
 病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。  
-[**id(subject)**](#id(subject))  
+[**id**](#id(subject))  
 [**progressStatus**](#progressStatus)  
 [**diagnosis**](#diagnosis)  
 
@@ -170,8 +170,8 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## type
 表現型のオントロジを記述する。以下のプロパティを持っている。id,ラベルともに全てに含まれる  
-[**id(HPO)**](#idHPO)  
-[**label(HPO)**](#labelHPO)  
+[**id**](#idHPO)  
+[**label**](#labelHPO)  
 
 ## onset  
 その表現型や症状が初めて確認、診断された時間について記述されている。object型で以下のpropertyを持っている。  
@@ -183,8 +183,8 @@ UNKNOWNは記録なし、OTHER_SEXは性別の判別ができない場合。
 
 ## assay  
 測定が行われた場合のその手法や結果を示している。配列で与えられ、配列の要素はobject型で以下の要素を持っている。assay,valueとも全てに含まれている  
-[**id(assay)**](#idassay)  
-[**label(assay)**](#labelassay)  
+[**id**](#idassay)  
+[**label**](#labelassay)  
 
 ## value
 assayに対する測定値を示している。object型であり、quantityを必ず持つ。  
@@ -205,8 +205,34 @@ assayに対する測定値を示している。object型であり、quantityを�
 
 ## term  
 疾患に関するOMIMタームを示す。object型であり、idとlabelを必ず含む  
-[**id(OMIM)**](#idomim)  
-[**label(OMIM)**](#labelomim)  
+[**id**](#idomim)  
+[**label**](#labelomim)  
+
+
+## created  
+phenopacketデータの作成時がdate-time形式(ISO8601)の形で与えられている  
+
+## createdby  
+データの作成者を表すstring形式のデータ  
+
+## resources  
+オントロジーやその他のデータで利用したものをリソースとして表示している。配列型であり各要素は以下のプロパティを持つobject型である。すべてのプロパティが必ず含まれている。  
+[**id**](#idresources)  
+[**name**](#nameresources)  
+[**url**](#url)  
+[**version**](#version)  
+[**namespacePrefix**](#namespacePrefix)  
+[**iriPrefix**](#iriPrefix)  
+
+
+## phenopacketSchemaVersion  
+データが利用しているphenopacketSchemaのバージョンを示すstring型。  
+
+## externalReferences
+論文へのリファレンスを示している。object型のデータで以下のすべてのプロパティが必ず含まれている。  
+[**id**](#idpmid)  
+[**reference**](#reference)
+[**description**](#description)
 
 ## status
 生きているか死んでいるかを表す。UNKNOWN_STATUS,ALIVE,DECEASEDのいずれかの値を持つ。  
@@ -216,6 +242,26 @@ assayに対する測定値を示している。object型であり、quantityを�
 患者の死亡時を表す。object型で以下のプロパティを持つ。  
 [**age**](#age)  
 [**ontologyClass**](#ontologyclass)  
+
+## age    
+年齢を示す。次のプロパティが必ず含まれている。  
+[**iso8601duration**](#iso8601duration)  
+
+## quantity  
+単位及び量を示す。以下のプロパティを持つobject型であり、unitとvalueは必ず含まれている。  
+[**unit**](#unit)  
+[**value**](#valuenumber)  
+[**referenceRange**](#referncerange)  
+
+## disease
+診断された疾患についてオントロジーの形で与えられたオブジェクト型である。以下のプロパティを必ず含む。
+[**id**](#idomim)  
+[**label**](#labelomim)  
+
+## genomicInterpretation
+診断された疾患の原因となるゲノム
+
+
 
 
 ## id(HPO)  
@@ -230,6 +276,15 @@ OMIMのidを示す
 ## label(OMIM)  
 OMIMのラベルを示す。  
 
+## id(PMID)  
+論文のPMIDを示す。  
+
+
+## reference  
+リファレンス論文へのリンクを示す。  
+
+## description  
+リファレンス論文のタイトルを示す.  
 
 
 
