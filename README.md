@@ -6,7 +6,7 @@ https://github.com/monarch-initiative/phenopacket-store/releases/latest/download
 # json schemaについて
 
 ```mermaid
-raph TD;
+graph TD;
 subgraph "Phenopacket"
     A["dict (PhenoPacket)"]
     A --> B["id (必須)"]
