@@ -187,7 +187,9 @@
                         "label": {
                             "type": "string"
                         }
-                    }
+                    },
+                    "required": ["id","label"],
+                    "additionalProperties": false
                 },
                 "value": {
                     "type": "object",
@@ -441,7 +443,9 @@
                                                                 "label": {
                                                                     "type": "string"
                                                                 }
-                                                            }
+                                                            },
+                                                            "required": ["id","label"],
+                                                            "additionalProperties": false
                                                         }
                                                     },
                                                     "required": [ "id", "geneContext", "allelicState"],
