@@ -207,7 +207,7 @@ id, subject, interpretations, diseases, metaDataはすべてのデータに含�
 [**subject**](#subject)  
 [**PhenotypicFeatures**](#PhenotypicFeatures)  
 [**measurements**](#measurements)  
-[**interpretation**](#interpretations)  
+[**interpretations**](#interpretations)  
 [**diseases**](#diseases)  
 [**metaData**](#metaData)  
 
@@ -236,7 +236,7 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 
 
 ## interpration  
-病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。  
+病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。現状のPhenoPacketStoreのデータはすべて配列長1である.    
 [**id(subject)**](#id(subject))  
 [**progressStatus**](#progressStatus)  
 [**diagnosis**](#diagnosis)  
