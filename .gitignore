@@ -2,3 +2,5 @@
 /.phenopacket/
 /0.1.24/
 /data_check/
+*.jpynb
+*.pkl
