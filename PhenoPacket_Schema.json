@@ -450,7 +450,7 @@
                                                             "additionalProperties": false
                                                         }
                                                     },
-                                                    "required": [ "id", "geneContext", "allelicState"],
+                                                    "required": [ "id", "allelicState"],
                                                     "additionalProperties": false
                                                 }
                                             },
@@ -580,7 +580,7 @@
                             },
                             "reference": {
                                 "type": "string",
-                                "format": "uri"
+                                "pattern": "^http.*"
                             },
                             "description": {
                                 "type": "string"
