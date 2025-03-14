@@ -4,3 +4,5 @@
 /data_check/
 *.ipynb
 *.pkl
+/resource/
+/API_res/
