@@ -6,3 +6,5 @@
 *.pkl
 /resource/
 /API_res/
+/sample/
+/escape/
