@@ -54,6 +54,10 @@
                             "additionalProperties": false
                         }
                     },
+                    "anyOf": [
+                        { "required": ["age"] },          
+                        { "required": ["ontologyClass"] } 
+                    ],
                     "additionalProperties": false
                 },
                 "vitalStatus": {
@@ -98,10 +102,37 @@
                                 "additionalProperties": false
                                 }
                             },
+                            "anyOf": [
+                                { "required": ["age"] },         
+                                { "required": ["ontologyClass"] } 
+                            ],
                             "additionalProperties": false
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                   "allOf": [
+        {
+            
+            "if": {
+                "not": {
+                    "properties": {
+                        "status": {
+                            "const": "DECEASED"
+                        }
+                    },
+                    "required": ["status"] 
+                }
+            },
+            "then": {
+                
+                "properties": {
+                    "timeOfDeath": false
+                }
+               
+            }
+           
+        }
+    ]
                     }
                     },
             "required": ["id"],
@@ -160,6 +191,10 @@
                                     "additionalProperties": false
                             }
                         },
+                        "anyOf": [
+                                { "required": ["age"] },         
+                                { "required": ["ontologyClass"] } 
+                            ],
                         "additionalProperties": false
                     },
                     "excluded": {
@@ -517,6 +552,10 @@
                                 "additionalProperties": false
                             }
                         },
+                        "anyOf": [
+                                { "required": ["age"] },         
+                                { "required": ["ontologyClass"] } 
+                            ],
                         "additionalProperties": false
                     }
                 },
