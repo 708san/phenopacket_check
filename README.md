@@ -198,6 +198,8 @@ end
 ```
 
 # json schemaの概要について  
+[**Pheno_Packet_Schema.json**]について  
+
 PhenoPacketStoreのデータには現状PhenoPacketSchemaのtop level要素のPhenoPacket以下の要素のみが含まれている  
 # プロパティ一覧　　
 
@@ -474,7 +476,14 @@ ACMGによるバリアントのinterpretationのガイドラインに従ったin
 プロパティ  
 [**variationDescriptor**](#variationdescriptor)  
 
-## variationDescriptor  
+
+
+
+
+## variantDescriptor
+
+
+
 
 
 
