@@ -235,14 +235,14 @@ phenopacketデータのidである。PMIDで始まる形式で表記される。
 [**value**](#value)  
 
 
-## interpration  
-病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。現状のPhenoPacketStoreのデータはすべて配列長1である. つまり、診断されている疾患は一つのみ。   
+## interpratation  
+病気や診断の結果を記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。id、progressStatus、diagnosisは全てに含まれる。    
 [**id(subject)**](#id(subject))  
 [**progressStatus**](#progressStatus)  
 [**diagnosis**](#diagnosis)  
 
 ## diseases  
-疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。現状、配列長はすべて1であるため、疾患は一つのみ。[**disease**](#disease)と対応する  
+疾患について記述する。配列であり、配列の一つの要素は以下のようなプロパティを持つobject型である。termは全てに含まれる。現状PhenopacketStoreに含まれるデータのdisasesは配列長1。つまり、[**disease**](#disease)と対応する  
 [**term**](#term)  
 [**onset**](#onset)  
 
