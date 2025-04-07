@@ -14,7 +14,7 @@ def process_hpo_data(csv_file, output_path):
         hpo_ids = row["HPO_IDs"].replace('"', '')  # HPO_IDs列の"を削除
         disease = row["Disease"]
 
-        url = f"https://pubcasefinder.dbcls.jp/api/pcf_get_ranked_list?target=omim&format=json&hpo_id={hpo_ids}"
+        url = f"https://dev-pubcasefinder.dbcls.jp/api/pcf_get_ranked_list?target=omim&format=json&hpo_id={hpo_ids}"
 
         try:
             response = requests.get(url)
