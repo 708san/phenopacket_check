@@ -1,0 +1,133 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type":"object",
+    "properties": {
+        "id":{
+            "type":"string"
+        },
+        "proband":{
+            "$ref":"PhenoPacketForCaseSharing.json#"
+        },
+        "relatives":{
+            "type": "array",
+            "items": {
+                    "$ref": "PhenoPacketForCaseSharing.json#"
+            }
+        },
+        "consanguinous_parents": {
+            "type":"boolean"
+        },
+        "pedigree": {
+            "$ref": "#/definitions/Pedigree"
+        },
+        "files": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/File"
+            }
+        },
+        "metaData":{
+            "$ref": "PhenoPacketForCaseSharing.json#/properties/metaData"
+        }
+
+    },
+    "required": [
+        "id",
+        "proband",
+        "pedigree",
+        "metaData" 
+    ], 
+    "additionalProperties": false,
+    "definitions": {
+        "Pedigree":{
+             "type":"object",
+             "properties": {
+                "persons":{
+                    "type":"array",
+                    "items":{
+                        "type":"object",
+                        "properties": {
+                            "familyId":{
+                                "type":"string"
+                            },
+                            "individualId":{
+                                "type":"string"
+                            },
+                            "paternalId":{
+                                "type":"string"
+                            },
+                            "maternalId":{
+                                "type":"string"
+                            },
+                            "sex": {
+                                "type": "string",
+                                "enum": [
+                                    "MALE",
+                                    "FEMALE",
+                                    "UNKNOWN_SEX",
+                                    "OTHER_SEX"
+                                ]
+                            },
+                            "affectedStatus":{
+                                "type":"string",
+                                "enum":[
+                                    "MISSING",
+                                    "UNAFFECTED",
+                                    "AFFECTED"
+                                ]
+                            }       
+                        },
+                        "required":["familyId","individualId","paternalId","maternalId","sex","affectedStatus"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["persons"],
+            "additionalProperties": false     
+        },
+        "File":{
+            "type":"object",
+            "properties": {
+                "uri":{
+                    "type":"string",
+                    "format": "uri"
+                },
+                "individualToFileIdentifiers":{
+                    "type":"object",
+                    "description": "Mapping biosampleId or patientId to identifiers in the file",
+                    "minProperties": 1,
+                    "propertyNames": {
+                        "description": "The ID of Patient or Biosample",
+                        "type":"string"
+                    },
+                    "additionalProperties": {
+                        "description": " The sample identifier used in the file",
+                        "type":"string"
+                    }
+                },
+                "fileAttributes":{
+                    "type": "object",
+                    "properties": {
+                        "genomeAssembly":{
+                            "type":"string"
+                        },
+                        "fileFormat":{
+                            "type":"string"
+                        },
+                        "description":{
+                            "type":"string"
+                        }
+                    },
+                    "required": [
+                        "genomeAssembly",
+                        "fileFormat",
+                        "description"
+                    ],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["uri"],
+            "additionalProperties": false
+        }
+    }
+}
