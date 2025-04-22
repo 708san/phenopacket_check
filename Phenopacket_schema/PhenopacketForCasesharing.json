@@ -678,7 +678,7 @@
                     }
                 }
             },
-            "required": ["created", "createdBy", "resources", "phenopacketSchemaVersion", "externalReferences"],
+            "required": ["created", "createdBy", "resources", "phenopacketSchemaVersion"],
             "additionalProperties": false
         }
     },
