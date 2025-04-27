@@ -205,7 +205,8 @@
                     "type"
                 ],
                 "additionalProperties": false
-            }
+            },
+            "minItems":1
         },
         "measurements": {
             "type": "array",
