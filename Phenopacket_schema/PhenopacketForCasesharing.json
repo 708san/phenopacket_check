@@ -347,6 +347,43 @@
                         "quantity"
                     ],
                     "additionalProperties": false
+                },
+                "timeObserved":{
+                    "type": "object",
+                    "properties": {
+                        "ontologyClass": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "pattern": "^HP:.*"
+                                },
+                                "label": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "label"
+                            ],
+                            "additionalProperties": false
+                        },
+                        "age":{
+                            "type":"object",
+                                 "properties": {
+                                    "iso8601duration":{
+                                        "type":"string"
+                                    }
+                                },
+                                "required": ["iso8601duration"],
+                                "additionalProperties": false
+                            }
+                        },
+                        "anyOf": [
+                                { "required": ["age"] },         
+                                { "required": ["ontologyClass"] } 
+                            ],
+                        "additionalProperties": false                
                 }
             },
             "required": ["assay","value"],
@@ -413,6 +450,17 @@
                                         "variantInterpretation": {
                                             "type": "object",
                                             "properties": {
+                                                "acmg_pathogenicity_classification":{
+                                                    "type":"string",
+                                                    "enum":[
+                                                        "NOT_PROVIDED",
+                                                        "BENIGN",
+                                                        "LIKELY_BENIGN",
+                                                        "UNCERTAIN_SIGNIFICANCE",
+                                                        "LIKELY_PATHOGENIC",
+                                                        "PATHOGENIC"
+                                                    ]
+                                                },
                                                 "variationDescriptor": {
                                                     "type": "object",
                                                     "properties": {
@@ -455,7 +503,8 @@
                                                                             "hgvs.p",
                                                                             "hgvs.m",
                                                                             "hgvs.n",
-                                                                            "hgvs.r"
+                                                                            "hgvs.r",
+                                                                            "hgvs"
                                                                         ]
                                                                     },
                                                                     "value": {
@@ -474,7 +523,11 @@
                                                             "properties": {
                                                                 "genomeAssembly": {
                                                                     "type": "string",
-                                                                    "pattern": "^hg38$"
+                                                                    "enum": [
+                                                                        "hg38",
+                                                                        "hg19",
+                                                                        "hg18"
+                                                                    ]
                                                                 },
                                                                 "chrom": {
                                                                     "type": "string",
@@ -495,9 +548,7 @@
                                                             "required": [
                                                                 "genomeAssembly",
                                                                 "chrom",
-                                                                "pos",
-                                                                "ref",
-                                                                "alt"
+                                                                "pos"
                                                             ],
                                                             "additionalProperties": false
                                                         },
@@ -535,7 +586,7 @@
                                                             "additionalProperties": false
                                                         }
                                                     },
-                                                    "required": [ "id", "allelicState"],
+                                                    "required": ["allelicState"],
                                                     "additionalProperties": false
                                                 }
                                             },
@@ -543,15 +594,20 @@
                                             "additionalProperties": false
                                         }
                                     },
-                                    "required": ["subjectOrBiosampleId", "interpretationStatus", "variantInterpretation"],
+                                    "required": [ "interpretationStatus", "variantInterpretation"],
                                     "additionalProperties": false
                                 }
                             }
                         },
-                        "required": ["disease", "genomicInterpretations"]
+                        "required": ["genomicInterpretations"]
+                    },
+                    "summary":{
+                        "type":"string"
                     }
+
+
                 },
-                "required": [ "id","progressStatus", "diagnosis"],
+                "required": ["progressStatus", "diagnosis"],
                 "additionalProperties": false
             }
         },
@@ -650,7 +706,7 @@
                                 "format": "uri"
                             }
                         },
-                        "required": ["id", "name", "url", "version", "namespacePrefix", "iriPrefix"],
+                        "required": ["id", "name", "url", "version", "namespacePrefix"],
                         "additionalProperties": false
                     }
                 },
@@ -683,6 +739,6 @@
             "additionalProperties": false
         }
     },
-    "required": ["id", "subject", "interpretations", "diseases", "metaData"],
+    "required": ["id", "subject", "interpretations", "metaData"],
     "additionalProperties": false
 }
