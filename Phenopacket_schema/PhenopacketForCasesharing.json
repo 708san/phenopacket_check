@@ -589,9 +589,7 @@
                                                                 }
                                                             },
                                                             "required": [
-                                                                "genomeAssembly",
-                                                                "chrom",
-                                                                "pos"
+                                                                "genomeAssembly"
                                                             ],
                                                             "additionalProperties": false
                                                         },
