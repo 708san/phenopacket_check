@@ -1,21 +1,21 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "type":"object",
+    "type": "object",
     "properties": {
-        "id":{
-            "type":"string"
+        "id": {
+            "type": "string"
         },
-        "proband":{
-            "$ref":"PhenoPacketForCaseSharing.json#"
+        "proband": {
+            "$ref": "PhenoPacketForCaseSharing.json#"
         },
-        "relatives":{
+        "relatives": {
             "type": "array",
             "items": {
-                    "$ref": "PhenoPacketForCaseSharing.json#"
+                "$ref": "PhenoPacketForCaseSharing.json#"
             }
         },
         "consanguinous_parents": {
-            "type":"boolean"
+            "type": "boolean"
         },
         "pedigree": {
             "$ref": "#/definitions/Pedigree"
@@ -26,38 +26,37 @@
                 "$ref": "#/definitions/File"
             }
         },
-        "metaData":{
+        "metaData": {
             "$ref": "PhenoPacketForCaseSharing.json#/properties/metaData"
         }
-
     },
     "required": [
         "id",
         "proband",
         "pedigree",
-        "metaData" 
-    ], 
+        "metaData"
+    ],
     "additionalProperties": false,
     "definitions": {
-        "Pedigree":{
-             "type":"object",
-             "properties": {
-                "persons":{
-                    "type":"array",
-                    "items":{
-                        "type":"object",
+        "Pedigree": {
+            "type": "object",
+            "properties": {
+                "persons": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
                         "properties": {
-                            "familyId":{
-                                "type":"string"
+                            "familyId": {
+                                "type": "string"
                             },
-                            "individualId":{
-                                "type":"string"
+                            "individualId": {
+                                "type": "string"
                             },
-                            "paternalId":{
-                                "type":"string"
+                            "paternalId": {
+                                "type": "string"
                             },
-                            "maternalId":{
-                                "type":"string"
+                            "maternalId": {
+                                "type": "string"
                             },
                             "sex": {
                                 "type": "string",
@@ -68,54 +67,63 @@
                                     "OTHER_SEX"
                                 ]
                             },
-                            "affectedStatus":{
-                                "type":"string",
-                                "enum":[
+                            "affectedStatus": {
+                                "type": "string",
+                                "enum": [
                                     "MISSING",
                                     "UNAFFECTED",
                                     "AFFECTED"
                                 ]
-                            }       
+                            }
                         },
-                        "required":["familyId","individualId","paternalId","maternalId","sex","affectedStatus"],
+                        "required": [
+                            "familyId",
+                            "individualId",
+                            "paternalId",
+                            "maternalId",
+                            "sex",
+                            "affectedStatus"
+                        ],
                         "additionalProperties": false
                     }
                 }
             },
-            "required": ["persons"],
-            "additionalProperties": false     
+            "required": [
+                "persons"
+            ],
+            "additionalProperties": false
         },
-        "File":{
-            "type":"object",
+        "File": {
+            "type": "object",
             "properties": {
-                "uri":{
-                    "type":"string",
+                "uri": {
+                    "type": "string",
                     "format": "uri"
                 },
-                "individualToFileIdentifiers":{
-                    "type":"object",
+                "individualToFileIdentifiers": {
+                    "type": "object",
                     "description": "Mapping biosampleId or patientId to identifiers in the file",
                     "minProperties": 1,
                     "propertyNames": {
                         "description": "The ID of Patient or Biosample",
-                        "type":"string"
+                        "type": "string"
                     },
                     "additionalProperties": {
                         "description": " The sample identifier used in the file",
-                        "type":"string"
+                        "type": "string"
                     }
                 },
-                "fileAttributes":{
+                "fileAttributes": {
                     "type": "object",
                     "properties": {
-                        "genomeAssembly":{
-                            "type":"string"
+                        "genomeAssembly": {
+                            "type": "string"
                         },
-                        "fileFormat":{
-                            "type":"string"
+                        "fileFormat": {
+                            "type": "string"
                         },
-                        "description":{
-                            "type":"string"
+                        "description": {
+                            "type": "string"
                         }
                     },
                     "required": [
@@ -126,7 +134,9 @@
                     "additionalProperties": false
                 }
             },
-            "required": ["uri"],
+            "required": [
+                "uri"
+            ],
             "additionalProperties": false
         }
     }

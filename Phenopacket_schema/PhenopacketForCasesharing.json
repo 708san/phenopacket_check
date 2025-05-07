@@ -11,9 +11,9 @@
                 "id": {
                     "type": "string"
                 },
-                "dateOfBirth":{
-                    "type":"string",
-                    "format":"date-time"
+                "dateOfBirth": {
+                    "type": "string",
+                    "format": "date-time"
                 },
                 "sex": {
                     "type": "string",
@@ -58,8 +58,16 @@
                         }
                     },
                     "anyOf": [
-                        { "required": ["age"] },          
-                        { "required": ["ontologyClass"] } 
+                        {
+                            "required": [
+                                "age"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "ontologyClass"
+                            ]
+                        }
                     ],
                     "additionalProperties": false
                 },
@@ -74,47 +82,46 @@
                                 "DECEASED"
                             ]
                         },
-                         "timeOfDeath":{
-                            "type":"object",
+                        "timeOfDeath": {
+                            "type": "object",
                             "properties": {
-                                "timestamp":{
-                                    "type":"string",
+                                "timestamp": {
+                                    "type": "string",
                                     "format": "date-time"
                                 }
                             },
-                            
                             "additionalProperties": false
                         }
                     },
                     "additionalProperties": false,
-                   "allOf": [
-        {
-            
-            "if": {
-                "not": {
-                    "properties": {
-                        "status": {
-                            "const": "DECEASED"
+                    "allOf": [
+                        {
+                            "if": {
+                                "not": {
+                                    "properties": {
+                                        "status": {
+                                            "const": "DECEASED"
+                                        }
+                                    },
+                                    "required": [
+                                        "status"
+                                    ]
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "timeOfDeath": false
+                                }
+                            }
                         }
-                    },
-                    "required": ["status"] 
+                    ]
                 }
             },
-            "then": {
-                
-                "properties": {
-                    "timeOfDeath": false
-                }
-               
-            }
-           
-        }
-    ]
-                    }
-                    },
-            "required": ["id"],
+            "required": [
+                "id"
+            ],
             "additionalProperties": false
-            },
+        },
         "phenotypicFeatures": {
             "type": "array",
             "items": {
@@ -137,7 +144,6 @@
                         ],
                         "additionalProperties": false
                     },
-
                     "onset": {
                         "type": "object",
                         "properties": {
@@ -158,43 +164,53 @@
                                 ],
                                 "additionalProperties": false
                             },
-                            "age":{
-                                "type":"object",
-                                    "properties": {
-                                        "iso8601duration":{
-                                            "type":"string"
-                                        }
-                                    },
-                                    "required": ["iso8601duration"],
-                                    "additionalProperties": false
+                            "age": {
+                                "type": "object",
+                                "properties": {
+                                    "iso8601duration": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "iso8601duration"
+                                ],
+                                "additionalProperties": false
                             }
                         },
                         "anyOf": [
-                                { "required": ["age"] },         
-                                { "required": ["ontologyClass"] } 
-                            ],
+                            {
+                                "required": [
+                                    "age"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "ontologyClass"
+                                ]
+                            }
+                        ],
                         "additionalProperties": false
                     },
                     "excluded": {
                         "type": "boolean"
                     },
-                    "modifiers":{
-                        "type":"array",
+                    "modifiers": {
+                        "type": "array",
                         "items": {
-                            "type":"object",
+                            "type": "object",
                             "properties": {
-                                "ontologyClass":{
-                                    "type":"object",
-                                     "properties": {
-                                        "id":{
-                                            "type":"string",
+                                "ontologyClass": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
                                             "pattern": "^HP:.*"
                                         },
-                                        "label":{
-                                            "type":"string"
+                                        "label": {
+                                            "type": "string"
                                         }
-                                     },
-                                     "required": [
+                                    },
+                                    "required": [
                                         "id",
                                         "label"
                                     ],
@@ -203,8 +219,8 @@
                             }
                         }
                     },
-                    "resolution":{
-                        "type":"object",
+                    "resolution": {
+                        "type": "object",
                         "properties": {
                             "ontologyClass": {
                                 "type": "object",
@@ -223,176 +239,203 @@
                                 ],
                                 "additionalProperties": false
                             },
-                            "age":{
-                                "type":"object",
-                                    "properties": {
-                                        "iso8601duration":{
-                                            "type":"string"
-                                        }
-                                    },
-                                    "required": ["iso8601duration"],
-                                    "additionalProperties": false
+                            "age": {
+                                "type": "object",
+                                "properties": {
+                                    "iso8601duration": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "iso8601duration"
+                                ],
+                                "additionalProperties": false
                             },
-                            "timestamp":{
-                                "type":"string",
+                            "timestamp": {
+                                "type": "string",
                                 "format": "date-time"
                             }
                         },
                         "anyOf": [
-                            { "required": ["age"] },         
-                            { "required": ["ontologyClass"] } ,
-                            {"required": ["timestamp"]}
+                            {
+                                "required": [
+                                    "age"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "ontologyClass"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "timestamp"
+                                ]
+                            }
                         ],
                         "additionalProperties": false
-
                     },
-                    "description":{
-                        "type":"string"
+                    "description": {
+                        "type": "string"
                     }
-
                 },
                 "required": [
                     "type"
                 ],
                 "additionalProperties": false
             },
-            "minItems":1
+            "minItems": 1
         },
         "measurements": {
             "type": "array",
             "items": {
                 "type": "object",
-            
-            "properties": {
-                "assay": {
-                    "type": "object",
-                    "properties": {
-                        "id": {
-                            "type": "string"
+                "properties": {
+                    "assay": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
                         },
-                        "label": {
-                            "type": "string"
-                        }
+                        "required": [
+                            "id",
+                            "label"
+                        ],
+                        "additionalProperties": false
                     },
-                    "required": ["id","label"],
-                    "additionalProperties": false
-                },
-                "value": {
-                    "type": "object",
-                    "properties": {
-                        "quantity": {
-                            "type": "object",
-                            "properties": {
-                                "unit": {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string"
-                                        },
-                                        "label": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "id",
-                                        "label"
-                                    ],
-                                    "additionalProperties": false
-                                },
-                                "value": {
-                                    "type": "number"
-                                },
-                                "referenceRange": {
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "object",
-                                            "properties": {
-                                                "id": {
-                                                    "type": "string"
-                                                },
-                                                "label": {
-                                                    "type": "string"
-                                                }
+                    "value": {
+                        "type": "object",
+                        "properties": {
+                            "quantity": {
+                                "type": "object",
+                                "properties": {
+                                    "unit": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
                                             },
-                                            "required": [
-                                                "id",
-                                                "label"
-                                            ],
-                                            "additionalProperties": false
+                                            "label": {
+                                                "type": "string"
+                                            }
                                         },
-                                        "low": {
-                                            "type": "number"
-                                        },
-                                        "high": {
-                                            "type": "number"
-                                        }
+                                        "required": [
+                                            "id",
+                                            "label"
+                                        ],
+                                        "additionalProperties": false
                                     },
-                                    "required": [
-                                        "unit",
-                                        "low",
-                                        "high"
-                                    ],
-                                    "additionalProperties": false
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "unit",
-                                "value"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "quantity"
-                    ],
-                    "additionalProperties": false
-                },
-                "timeObserved":{
-                    "type": "object",
-                    "properties": {
-                        "ontologyClass": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "pattern": "^HP:.*"
-                                },
-                                "label": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "id",
-                                "label"
-                            ],
-                            "additionalProperties": false
-                        },
-                        "age":{
-                            "type":"object",
-                                 "properties": {
-                                    "iso8601duration":{
-                                        "type":"string"
+                                    "value": {
+                                        "type": "number"
+                                    },
+                                    "referenceRange": {
+                                        "type": "object",
+                                        "properties": {
+                                            "unit": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "label": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "id",
+                                                    "label"
+                                                ],
+                                                "additionalProperties": false
+                                            },
+                                            "low": {
+                                                "type": "number"
+                                            },
+                                            "high": {
+                                                "type": "number"
+                                            }
+                                        },
+                                        "required": [
+                                            "unit",
+                                            "low",
+                                            "high"
+                                        ],
+                                        "additionalProperties": false
                                     }
                                 },
-                                "required": ["iso8601duration"],
+                                "additionalProperties": false,
+                                "required": [
+                                    "unit",
+                                    "value"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "quantity"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "timeObserved": {
+                        "type": "object",
+                        "properties": {
+                            "ontologyClass": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "pattern": "^HP:.*"
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "label"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "age": {
+                                "type": "object",
+                                "properties": {
+                                    "iso8601duration": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "iso8601duration"
+                                ],
                                 "additionalProperties": false
                             }
                         },
                         "anyOf": [
-                                { "required": ["age"] },         
-                                { "required": ["ontologyClass"] } 
-                            ],
-                        "additionalProperties": false                
-                }
-            },
-            "required": ["assay","value"],
-            "additionalProperties": false
-        }
-    },
+                            {
+                                "required": [
+                                    "age"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "ontologyClass"
+                                ]
+                            }
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "assay",
+                    "value"
+                ],
+                "additionalProperties": false
+            }
+        },
         "interpretations": {
             "type": "array",
-            "minItems":1,
+            "minItems": 1,
             "items": {
                 "type": "object",
                 "properties": {
@@ -450,9 +493,9 @@
                                         "variantInterpretation": {
                                             "type": "object",
                                             "properties": {
-                                                "acmg_pathogenicity_classification":{
-                                                    "type":"string",
-                                                    "enum":[
+                                                "acmg_pathogenicity_classification": {
+                                                    "type": "string",
+                                                    "enum": [
                                                         "NOT_PROVIDED",
                                                         "BENIGN",
                                                         "LIKELY_BENIGN",
@@ -582,38 +625,51 @@
                                                                     "type": "string"
                                                                 }
                                                             },
-                                                            "required": ["id","label"],
+                                                            "required": [
+                                                                "id",
+                                                                "label"
+                                                            ],
                                                             "additionalProperties": false
                                                         }
                                                     },
-                                                    "required": ["allelicState"],
+                                                    "required": [
+                                                        "allelicState"
+                                                    ],
                                                     "additionalProperties": false
                                                 }
                                             },
-                                            "required": [ "variationDescriptor"],
+                                            "required": [
+                                                "variationDescriptor"
+                                            ],
                                             "additionalProperties": false
                                         }
                                     },
-                                    "required": [ "interpretationStatus", "variantInterpretation"],
+                                    "required": [
+                                        "interpretationStatus",
+                                        "variantInterpretation"
+                                    ],
                                     "additionalProperties": false
                                 }
                             }
                         },
-                        "required": ["genomicInterpretations"]
+                        "required": [
+                            "genomicInterpretations"
+                        ]
                     },
-                    "summary":{
-                        "type":"string"
+                    "summary": {
+                        "type": "string"
                     }
-
-
                 },
-                "required": ["progressStatus", "diagnosis"],
+                "required": [
+                    "progressStatus",
+                    "diagnosis"
+                ],
                 "additionalProperties": false
             }
         },
         "diseases": {
             "type": "array",
-            "minItems":1,
+            "minItems": 1,
             "items": {
                 "type": "object",
                 "properties": {
@@ -628,7 +684,10 @@
                                 "type": "string"
                             }
                         },
-                        "required": [ "id", "label" ],
+                        "required": [
+                            "id",
+                            "label"
+                        ],
                         "additionalProperties": false
                     },
                     "onset": {
@@ -645,7 +704,10 @@
                                         "type": "string"
                                     }
                                 },
-                                "required": ["id", "label"],
+                                "required": [
+                                    "id",
+                                    "label"
+                                ],
                                 "additionalProperties": false
                             },
                             "age": {
@@ -655,18 +717,30 @@
                                         "type": "string"
                                     }
                                 },
-                                "required": ["iso8601duration"],
+                                "required": [
+                                    "iso8601duration"
+                                ],
                                 "additionalProperties": false
                             }
                         },
                         "anyOf": [
-                                { "required": ["age"] },         
-                                { "required": ["ontologyClass"] } 
-                            ],
+                            {
+                                "required": [
+                                    "age"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "ontologyClass"
+                                ]
+                            }
+                        ],
                         "additionalProperties": false
                     }
                 },
-                "required": ["term"],
+                "required": [
+                    "term"
+                ],
                 "additionalProperties": false
             }
         },
@@ -706,7 +780,13 @@
                                 "format": "uri"
                             }
                         },
-                        "required": ["id", "name", "url", "version", "namespacePrefix"],
+                        "required": [
+                            "id",
+                            "name",
+                            "url",
+                            "version",
+                            "namespacePrefix"
+                        ],
                         "additionalProperties": false
                     }
                 },
@@ -730,15 +810,29 @@
                                 "type": "string"
                             }
                         },
-                        "required": ["id", "reference", "description"],
+                        "required": [
+                            "id",
+                            "reference",
+                            "description"
+                        ],
                         "additionalProperties": false
                     }
                 }
             },
-            "required": ["created", "createdBy", "resources", "phenopacketSchemaVersion"],
+            "required": [
+                "created",
+                "createdBy",
+                "resources",
+                "phenopacketSchemaVersion"
+            ],
             "additionalProperties": false
         }
     },
-    "required": ["id", "subject", "interpretations", "metaData"],
+    "required": [
+        "id",
+        "subject",
+        "interpretations",
+        "metaData"
+    ],
     "additionalProperties": false
 }
