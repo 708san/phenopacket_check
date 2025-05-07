@@ -493,7 +493,7 @@
                                         "variantInterpretation": {
                                             "type": "object",
                                             "properties": {
-                                                "acmg_pathogenicity_classification": {
+                                                "acmgPathogenicityClassification": {
                                                     "type": "string",
                                                     "enum": [
                                                         "NOT_PROVIDED",
