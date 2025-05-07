@@ -415,18 +415,6 @@
                                 "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
                             }
                         },
-                        "anyOf": [
-                            {
-                                "required": [
-                                    "age"
-                                ]
-                            },
-                            {
-                                "required": [
-                                    "ontologyClass"
-                                ]
-                            }
-                        ],
                         "additionalProperties": false
                     }
                 },
