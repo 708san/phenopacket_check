@@ -367,7 +367,8 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "id": {
-                                                            "type": "string"
+                                                            "type": "string",
+                                                            "pattern": "^var_[a-zA-Z]{25}$"
                                                         },
                                                         "label": {
                                                             "type": "string"
