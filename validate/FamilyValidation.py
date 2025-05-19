@@ -3,7 +3,7 @@ import json
 from jsonschema import validate, ValidationError, FormatChecker, RefResolver
 import argparse
 import os
-import pathlib # pathlib を使うとパス操作が楽
+import pathlib 
 
 def validation_json_files(json_schema_path, json_dir):
     schema_path_obj = pathlib.Path(json_schema_path).resolve()
